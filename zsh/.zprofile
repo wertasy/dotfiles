@@ -1,0 +1,4 @@
+# if [[ -z $DISPLAY ]] && [[ $(tty) == /dev/tty1 ]] && [[ -z $WAYLAND_DISPLAY ]]; then
+#     exec start-hyprland
+# fi
+

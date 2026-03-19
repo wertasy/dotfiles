@@ -1,0 +1,69 @@
+# Ignore sensitive data
+*.key
+*.pem
+*.p12
+*.pfx
+
+# Ignore SSH private keys
+ssh/.ssh/id_*
+ssh/.ssh/*_id
+ssh/.ssh/known_hosts
+
+# Ignore history and temporary files
+.bash_history
+.zhistory
+.python_history
+.sqlite_history
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# Ignore cache directories
+.cache/
+__pycache__/
+*.pyc
+.pytest_cache/
+zsh/.zsh/cache/
+
+# Ignore IDE specific files
+.vscode/
+.idea/
+*.sublime-*
+
+# Ignore large binary files
+*.log
+*.bak
+
+# Ignore temporary download directories
+Downloads/
+
+# Ignore project specific directories
+Github/
+playground/
+go/
+Android/
+Documents/
+hook_uname/
+resmgr/
+vllm-env/
+voxcpm-env/
+src/
+*.toml
+*.json
+
+# Ignore OS-specific files
+.Trash-*/
+.local/share/Trash/
+
+# Ignore temporary editor files
+.viminfo
+.viminfo.tmp
+.netrwhist
+
+# Ignore Cargo cache files
+.cargo/.global-cache
+.cargo/.package-cache*
+.cargo/registry/
+.cargo/bin/

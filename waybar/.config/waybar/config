@@ -1,0 +1,115 @@
+{
+    "layer": "top",
+    "position": "top",
+    "height": 36,
+    "spacing": 4,
+    "reload_style_on_change": true,
+    "modules-left": [
+        "hyprland/workspaces",
+        "hyprland/window"
+    ],
+    "modules-center": [
+        "clock"
+    ],
+    "modules-right": [
+        "tray",
+        "network",
+        "cpu",
+        "memory",
+        "pulseaudio",
+        "battery"
+    ],
+    "hyprland/workspaces": {
+        "format": "{icon}",
+        "format-icons": {
+            "1": " ",
+            "2": " ",
+            "3": " ",
+            "4": " ",
+            "5": " ",
+            "default": " "
+        },
+        "persistent-workspaces": {
+            "*": 5
+        }
+    },
+    "hyprland/window": {
+        "format": "  {}",
+        "separate-outputs": true,
+        "max-length": 80
+    },
+    "tray": {
+        "icon-size": 18,
+        "spacing": 10
+    },
+    "clock": {
+        "interval": 1,
+        "format": " {:%H:%M:%S}",
+        "format-alt": " {:%Y-%m-%d %H:%M}",
+        "tooltip-format": "<tt><small>{calendar}</small></tt>",
+        "calendar": {
+            "mode": "year",
+            "mode-mon-col": 3,
+            "weeks-pos": "right",
+            "on-scroll": 1,
+            "on-click-right": "mode",
+            "format": {
+                "months": "<span color='#ffead3'><b>{}</b></span>",
+                "days": "<span color='#ecc6d9'><b>{}</b></span>",
+                "weeks": "<span color='#99ffdd'><b>W{}</b></span>",
+                "weekdays": "<span color='#ffcc66'><b>{}</b></span>",
+                "today": "<span color='#ff6699'><b><u>{}</u></b></span>"
+            }
+        }
+    },
+    "cpu": {
+        "interval": 2,
+        "format": " {usage:>2}%",
+        "tooltip": true
+    },
+    "memory": {
+        "interval": 5,
+        "format": " {percentage}%"
+    },
+    "network": {
+        "interval": 3,
+        "format-wifi": "{icon} {essid}",
+        "format-ethernet": "󰈀 {bandwidthUpBits}/{bandwidthDownBits}",
+        "format-disconnected": "⚠",
+        "tooltip-format": "{ifname} {ipaddr}/{cidr}",
+        "format-icons": [
+            "󰤯",
+            "󰤟",
+            "󰤥",
+            "󰤨"
+        ]
+    },
+    "battery": {
+        "states": {
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{icon} {capacity}%",
+        "format-charging": "󰂄 {capacity}%",
+        "format-icons": [
+            "",
+            "",
+            "",
+            "",
+            ""
+        ]
+    },
+    "pulseaudio": {
+        "scroll-step": 5,
+        "format": "{icon} {volume}%",
+        "format-muted": "",
+        "format-icons": {
+            "default": [
+                "",
+                "",
+                ""
+            ]
+        },
+        "on-click-right": "pavucontrol"
+    }
+}
