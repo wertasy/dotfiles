@@ -1,0 +1,10 @@
+# Generated/build files
+build/
+*.userdb/
+sync/
+
+# Compiled binaries
+*.bin
+*.reverse.bin
+*.prism.bin
+*.table.bin
