@@ -1,10 +1,7 @@
-# Generated/build files
+# 自动生成的文件
 build/
 *.userdb/
+installation.yaml
+user.yaml
+# 多设备同步目录
 sync/
-
-# Compiled binaries
-*.bin
-*.reverse.bin
-*.prism.bin
-*.table.bin
