@@ -1,0 +1,28 @@
+[KDE]
+LookAndFeelPackage=org.kde.breezedark.desktop
+SingleClick=true
+
+[General]
+ColorScheme=BreezeDark
+Name=Breeze Dark
+XftAntialias=true
+XftHintStyle=hintslight
+XftSubPixel=rgb
+fixed=HarmonyOS Sans SC,12,-1,5,50,0,0,0,0,0,0,0,0,0,0,1
+font=HarmonyOS Sans SC,12,-1,5,50,0,0,0,0,0,0,0,0,0,0,1
+menuFont=HarmonyOS Sans SC,12,-1,5,50,0,0,0,0,0,0,0,0,0,0,1
+smallestReadableFont=HarmonyOS Sans SC,10,-1,5,50,0,0,0,0,0,0,0,0,0,0,1
+toolBarFont=HarmonyOS Sans SC,12,-1,5,50,0,0,0,0,0,0,0,0,0,0,1
+verboseFont=HarmonyOS Sans SC,12,-1,5,50,0,0,0,0,0,0,0,0,0,0,1
+widgetStyle=Breeze
+
+[Icons]
+Theme=WhiteSur-dark
+
+[WM]
+activeBackground=49,54,59
+activeBlend=255,255,255
+activeForeground=255,255,255
+inactiveBackground=42,46,50
+inactiveBlend=178,180,180
+inactiveForeground=178,180,180
