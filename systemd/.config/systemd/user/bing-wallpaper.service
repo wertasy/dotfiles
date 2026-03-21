@@ -1,0 +1,9 @@
+[Unit]
+Description=Download Bing wallpaper of the day
+
+[Service]
+Type=oneshot
+ExecStart=%h/dotfiles/scripts/bing-wallpaper.sh
+
+[Install]
+WantedBy=default.target

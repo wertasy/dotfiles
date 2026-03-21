@@ -111,6 +111,16 @@ window#waybar.hidden {
   background-color: rgba(130, 100, 186, 0.85);
 }
 
+#custom-notifications {
+  background-color: #cba6f7;
+  color: #1e1e2e;
+  padding: 0 12px;
+}
+
+#custom-notifications:hover {
+  background-color: #b4befe;
+}
+
 #window {
   font-family: "Noto Sans CJK SC", sans-serif;
   font-weight: 400;
