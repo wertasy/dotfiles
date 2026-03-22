@@ -3,7 +3,7 @@ Description=Download Bing wallpaper of the day
 
 [Service]
 Type=oneshot
-ExecStart=%h/dotfiles/scripts/bing-wallpaper.sh
+ExecStart=%h/.local/scripts/bing-wallpaper.sh
 
 [Install]
 WantedBy=default.target

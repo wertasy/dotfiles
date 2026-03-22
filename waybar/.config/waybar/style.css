@@ -1,10 +1,10 @@
 * {
   /* `otf-font-awesome` is required to be installed for icons */
-  font-family: "Maple Mono";
+  font-family: "Maple Mono", "Symbols Nerd Font", "Font Awesome 7 Free Solid", "Font Awesome 7 Free", "Font Awesome 7 Brands", "HarmonyOS Sans SC", "Noto Sans CJK SC", sans-serif;
   font-weight: 500;
   font-size: 18px;
 
-  border-radius: 10px;
+  border-radius: 20px;
   text-shadow: none;
 
   transition-property: background;
@@ -20,7 +20,8 @@ window#waybar.hidden {
 }
 
 #workspaces {
-  background: #87ddff;
+  background: rgba(30, 30, 40, 0.75);
+  border: 1px solid rgba(89, 89, 89, 0.67);
   transition: none;
   font-size: 12px;
 }
@@ -33,24 +34,25 @@ window#waybar.hidden {
 }
 
 #workspaces button:hover {
-  background: rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.15);
 }
 
 #workspaces button.active {
-  background: #fffcdf;
-  color: #000000;
+  background: rgba(255, 255, 255, 0.25);
+  color: #ffffff;
 }
 
 #workspaces button.active:hover {
-  background: #fffcdf;
+  background: rgba(255, 255, 255, 0.25);
 }
 
 #workspaces button.urgent {
-  background-color: #eb4d4b;
+  background-color: rgba(235, 77, 75, 0.8);
 }
 
 #mode {
-  background-color: #64727d;
+  background-color: rgba(30, 30, 40, 0.75);
+  border: 1px solid rgba(89, 89, 89, 0.67);
   border-bottom: 3px solid #ffffff;
 }
 
@@ -59,71 +61,45 @@ window#waybar.hidden {
 #memory,
 #network,
 #battery,
+#custom-power,
 #pulseaudio,
 #tray,
+#mpris,
 #mode,
 #window {
   padding: 0 12px;
   color: #ffffff;
 }
 
-/* If workspaces is the leftmost module, omit left margin */
-.modules-left > widget:first-child > * {
-  margin-left: 2px;
-}
-
-/* If workspaces is the rightmost module, omit right margin */
-.modules-right > widget:last-child > * {
-  margin-right: 2px;
-}
-
-#clock {
-  background-color: #eefff1;
-  color: #000000;
-}
-
-#cpu {
-  background-color: #fe968b;
-  color: #000000;
-}
-
-#memory {
-  background-color: #ffeaaa;
-  color: #000000;
-}
-
-#pulseaudio {
-  background-color: #b0f5e5;
-  color: #000000;
-}
-
-#battery {
-  background-color: #e0f5a5;
-  color: #000000;
-}
-
-#network {
-  background-color: #87ddff;
-  color: #000000;
+#clock,
+#cpu,
+#memory,
+#pulseaudio,
+#battery,
+#custom-power,
+#network,
+#mpris,
+#tray,
+#custom-notifications,
+#window {
+  padding: 0 12px;
+  background-color: rgba(30, 30, 40, 0.75);
+  border: 1px solid rgba(89, 89, 89, 0.67);
+  color: #ffffff;
 }
 
 #tray {
-  background-color: rgba(130, 100, 186, 0.85);
-}
-
-#custom-notifications {
-  background-color: #cba6f7;
-  color: #1e1e2e;
-  padding: 0 12px;
+  padding: 0 16px;
 }
 
 #custom-notifications:hover {
-  background-color: #b4befe;
+  background-color: rgba(50, 50, 60, 0.85);
 }
 
 #window {
-  font-family: "Noto Sans CJK SC", sans-serif;
   font-weight: 400;
-  background-color: #cbecff;
-  color: #000000;
+}
+
+tooltip label {
+  font-family: "Sarasa Mono SC", monospace;
 }

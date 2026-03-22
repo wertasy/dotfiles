@@ -1,34 +1,37 @@
 {
   "layer": "top",
   "position": "top",
-  "height": 34,
-  "spacing": 4,
+  "height": 36,
+  "margin": "8 12 0 12",
+  "spacing": 8,
   "reload_style_on_change": true,
   "modules-left": [
     "hyprland/workspaces",
     "hyprland/window"
   ],
   "modules-center": [
+    "custom/notifications",
     "clock"
   ],
   "modules-right": [
     "tray",
-    "custom/notifications",
+    "mpris",
     "network",
     "cpu",
     "memory",
     "pulseaudio",
-    "battery"
+    "battery",
+    "custom/power"
   ],
   "hyprland/workspaces": {
     "format": "{icon}",
     "format-icons": {
-      "1": " ",
-      "2": " ",
-      "3": " ",
-      "4": " ",
-      "5": " ",
-      "default": " "
+      "1": "",
+      "2": "",
+      "3": "",
+      "4": "",
+      "5": "",
+      "default": ""
     },
     "persistent-workspaces": {
       "*": 5
@@ -40,19 +43,19 @@
     "max-length": 60
   },
   "tray": {
-    "icon-size": 20,
-    "spacing": 10
+    "icon-size": 22,
+    "spacing": 18
   },
   "clock": {
     "interval": 1,
-    "format": " {:%H:%M:%S}",
+    "format": "{:%H:%M:%S}",
     "format-alt": " {:%Y-%m-%d %H:%M}",
-    "tooltip-format": "<tt><small>{calendar}</small></tt>",
+    "tooltip-format": "<small>{calendar}</small>",
     "calendar": {
       "mode": "year",
       "mode-mon-col": 3,
       "weeks-pos": "right",
-      "on-scroll": 1,
+      "on-scroll": 2,
       "on-click-right": "mode",
       "format": {
         "months": "<span color='#ffead3'><b>{}</b></span>",
@@ -65,19 +68,20 @@
   },
   "cpu": {
     "interval": 2,
-    "format": " {usage:>2}%",
+    "format": "{usage}% ",
     "tooltip": true,
-    "on-click": "foot -e btop"
+    "on-click-right": "foot -e btop"
   },
   "memory": {
     "interval": 5,
-    "format": " {percentage}%",
-    "on-click": "foot -e btop"
+    "format": "{percentage}% ",
+    "on-click-right": "foot -e btop"
   },
   "network": {
     "interval": 3,
-    "format-wifi": "{icon} {essid}",
-    "format-ethernet": "󰈀 {bandwidthUpBits}/{bandwidthDownBits}",
+    "format-wifi": "{icon}",
+    "format-alt": "{essid} {icon}",
+    "format-ethernet": "{bandwidthUpBits}/{bandwidthDownBits} 󰈀",
     "format-disconnected": "⚠",
     "tooltip-format": "{ifname} {ipaddr}/{cidr}",
     "format-icons": [
@@ -86,15 +90,15 @@
       "󰤥",
       "󰤨"
     ],
-    "on-click": "nm-connection-editor"
+    "on-click-right": "nm-connection-editor"
   },
   "battery": {
     "states": {
       "warning": 30,
       "critical": 15
     },
-    "format": "{icon} {capacity}%",
-    "format-charging": "󰂄 {capacity}%",
+    "format": "{capacity}% {icon}",
+    "format-charging": "{capacity}% 󰂄",
     "format-icons": [
       "",
       "",
@@ -102,11 +106,12 @@
       "",
       ""
     ],
-    "on-click": "~/.config/waybar/scripts/power-menu.sh"
+    "on-click-right": "~/.config/waybar/scripts/power-menu.sh"
   },
   "pulseaudio": {
     "scroll-step": 5,
-    "format": "{icon} {volume}%",
+    "format": "{icon}",
+    "format-alt": "{volume}% {icon}",
     "format-muted": "",
     "format-icons": {
       "default": [
@@ -115,11 +120,29 @@
         ""
       ]
     },
-    "on-click": "pavucontrol"
+    "on-click-right": "pavucontrol"
+  },
+  "mpris": {
+    "format": "{player_icon} {title}",
+    "format-paused": "{status_icon} {title}",
+    "player-icons": {
+      "default": "▶",
+      "mpv": "🎵"
+    },
+    "status-icons": {
+      "paused": "⏸"
+    },
+    "on-click": "playerctl play-pause",
+    "on-click-right": "playerctl next"
+  },
+  "custom/power": {
+    "tooltip": false,
+    "format": "\uf011",
+    "on-click": "~/.config/waybar/scripts/power-menu.sh"
   },
   "custom/notifications": {
     "tooltip": false,
-    "format": "{icon} ",
+    "format": "{icon}",
     "format-icons": {
       "notification": "󰂝",
       "none": "󰂚",
@@ -131,10 +154,10 @@
       "dnd-inhibited-none": "󰪐"
     },
     "return-type": "json",
-    "exec-if": "which swaync-client",
-    "exec": "swaync-client -swb",
-    "on-click": "swaync-client -t -sw",
-    "on-click-right": "swaync-client -d -sw",
+    "exec-if": "which makoctl",
+    "exec": "~/.config/waybar/scripts/notifications.sh",
+    "on-click": "makoctl restore",
+    "on-click-right": "makoctl dismiss --all",
     "escape": true
   }
 }

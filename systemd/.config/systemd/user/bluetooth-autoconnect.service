@@ -1,0 +1,12 @@
+[Unit]
+Description=Auto connect Bluetooth audio devices
+After=bluetooth.target graphical-session.target
+Requires=bluetooth.target
+
+[Service]
+Type=oneshot
+ExecStartPre=/usr/bin/sleep 5
+ExecStart=/usr/bin/bluetoothctl connect 5C:02:14:2C:E6:D6
+
+[Install]
+WantedBy=graphical-session.target

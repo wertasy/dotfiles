@@ -54,8 +54,20 @@ for package in "$DOTFILES_DIR"/*/; do
 done
 
 print_success "Dotfiles setup complete!"
+
+print_info "Enabling bing-wallpaper systemd service..."
+systemctl --user daemon-reload
+systemctl --user enable bing-wallpaper.timer
+systemctl --user start bing-wallpaper.timer
+print_success "bing-wallpaper timer enabled and started"
+print_info "Run 'systemctl --user start bing-wallpaper.service' to download wallpaper immediately"
+
 print_info "You can now manage your configurations in $DOTFILES_DIR"
 print_info "To remove a package, run: stow -D <package-name>"
 print_info "You may need to reload your shell for changes to take effect:"
 print_info "  For bash: source ~/.bashrc"
 print_info "  For zsh:  source ~/.zshrc"
+
+print_warning "Firefox user.js requires manual setup:"
+print_info "  ln -sf ~/dotfiles/firefox/.config/mozilla/firefox/user.js ~/.config/mozilla/firefox/<profile>/user.js"
+print_info "  Replace <profile> with your Firefox profile directory name (e.g., xxxxxxxx.default-release)"

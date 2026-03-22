@@ -4,13 +4,13 @@
 include "/home/wert/.gtkrc-2.0.mine"
 gtk-theme-name="Adwaita-dark"
 gtk-icon-theme-name="Papirus-Dark"
-gtk-font-name="HarmonyOS Sans Naskh Arabic UI 11"
-gtk-cursor-theme-name="default"
+gtk-font-name="Adwaita Sans 11"
+gtk-cursor-theme-name="Adwaita"
 gtk-cursor-theme-size=36
-gtk-toolbar-style=GTK_TOOLBAR_BOTH_HORIZ
+gtk-toolbar-style=3
 gtk-toolbar-icon-size=GTK_ICON_SIZE_LARGE_TOOLBAR
-gtk-button-images=1
-gtk-menu-images=1
+gtk-button-images=0
+gtk-menu-images=0
 gtk-enable-event-sounds=1
 gtk-enable-input-feedback-sounds=0
 gtk-xft-antialias=1
