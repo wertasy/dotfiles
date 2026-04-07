@@ -1,8 +1,8 @@
 [Unit]
-Description=Download Bing wallpaper daily
+Description=Download Bing wallpaper periodically
 
 [Timer]
-OnCalendar=daily
+OnCalendar=*-*-* 00/4:00:00
 OnBootSec=5min
 Persistent=true
 
