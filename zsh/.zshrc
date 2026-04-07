@@ -150,11 +150,14 @@ zstyle ':fzf-tab:complete:cd:*' fzf-preview 'exa -1 --color=always $realpath'
 # andnable
 zstyle ':fzf-tab:*' switch-group ',' '.'
 
+export GITHUB_TOKEN=***REDACTED_GITHUB_TOKEN***
+export HF_TOKEN=***REDACTED_HF_TOKEN***
+
 export ANDROID_SDK_ROOT=/opt/android-sdk
 
 export PATH=$HOME/.local/go/bin:$HOME/.local/bin:$HOME/.gem/ruby/3.0.0/bin:$PATH
 export PATH=$PATH:$ANDROID_SDK_ROOT/tools:$ANDROID_SDK_ROOT/platform-tools
-export GITHUB_TOKEN=***REDACTED_GITHUB_TOKEN***
+
 
 export FLUTTER_STORAGE_BASE_URL="https://mirrors.tuna.tsinghua.edu.cn/flutter"
 export PUB_HOSTED_URL="https://mirrors.tuna.tsinghua.edu.cn/dart-pub"

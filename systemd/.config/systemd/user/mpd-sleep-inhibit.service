@@ -1,0 +1,11 @@
+[Unit]
+Description=Inhibit sleep while MPD is playing
+After=mpd.service
+
+[Service]
+Type=simple
+ExecStart=%h/.config/systemd/user/scripts/mpd-sleep-inhibit.sh
+Restart=on-failure
+
+[Install]
+WantedBy=default.target

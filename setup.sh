@@ -62,6 +62,11 @@ systemctl --user start bing-wallpaper.timer
 print_success "bing-wallpaper timer enabled and started"
 print_info "Run 'systemctl --user start bing-wallpaper.service' to download wallpaper immediately"
 
+print_info "Enabling wallpaper-rotate systemd service..."
+systemctl --user enable wallpaper-rotate.timer
+systemctl --user start wallpaper-rotate.timer
+print_success "wallpaper-rotate timer enabled and started"
+
 print_info "You can now manage your configurations in $DOTFILES_DIR"
 print_info "To remove a package, run: stow -D <package-name>"
 print_info "You may need to reload your shell for changes to take effect:"

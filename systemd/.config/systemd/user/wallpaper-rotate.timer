@@ -1,0 +1,10 @@
+[Unit]
+Description=Rotate local wallpaper periodically
+
+[Timer]
+OnCalendar=*-*-* *:0/30:00
+OnBootSec=2min
+Persistent=true
+
+[Install]
+WantedBy=timers.target

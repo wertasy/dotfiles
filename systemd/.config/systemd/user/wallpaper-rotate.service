@@ -1,0 +1,6 @@
+[Unit]
+Description=Rotate local wallpaper randomly
+
+[Service]
+Type=oneshot
+ExecStart=%h/.local/scripts/wallpaper-rotate.sh
