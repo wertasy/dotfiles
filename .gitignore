@@ -52,6 +52,7 @@ voxcpm-env/
 src/
 *.toml
 *.json
+!.config/sunshine/apps.json
 
 # Ignore OS-specific files
 .Trash-*/
@@ -68,3 +69,8 @@ src/
 .cargo/registry/
 .cargo/bin/
 mpd/.config/mpd/log
+
+# Sunshine sensitive/runtime files
+.config/sunshine/credentials/
+.config/sunshine/*.log
+.config/sunshine/*_state.json
