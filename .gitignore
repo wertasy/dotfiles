@@ -74,3 +74,7 @@ mpd/.config/mpd/log
 .config/sunshine/credentials/
 .config/sunshine/*.log
 .config/sunshine/*_state.json
+
+# MPD runtime files
+mpd/.config/mpd/database
+mpd/.config/mpd/state
