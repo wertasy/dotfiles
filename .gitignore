@@ -67,3 +67,4 @@ src/
 .cargo/.package-cache*
 .cargo/registry/
 .cargo/bin/
+mpd/.config/mpd/log

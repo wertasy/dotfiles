@@ -1,12 +1,12 @@
 [Unit]
-Description=Auto connect Bluetooth audio devices
-After=bluetooth.target graphical-session.target
-Requires=bluetooth.target
+Description=Auto-connect trusted Bluetooth audio devices
+After=pipewire.service wireplumber.service bluetooth.service
+Requires=pipewire.service
 
 [Service]
 Type=oneshot
-ExecStartPre=/usr/bin/sleep 5
-ExecStart=/usr/bin/bluetoothctl connect 5C:02:14:2C:E6:D6
+RemainAfterExit=yes
+ExecStart=/bin/bash -c 'for i in $(seq 1 10); do bluetoothctl connect 5C:02:14:2C:E6:D6 && exit 0; sleep 3; done; exit 1'
 
 [Install]
-WantedBy=graphical-session.target
+WantedBy=default.target

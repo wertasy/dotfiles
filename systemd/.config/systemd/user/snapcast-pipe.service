@@ -1,0 +1,14 @@
+[Unit]
+Description=Snapcast Pipe - Virtual Audio Sink to Snapcast FIFO
+After=pipewire.service pipewire-pulse.service
+Requires=pipewire.service pipewire-pulse.service
+
+[Service]
+Type=simple
+ExecStart=/home/wert/.local/bin/snapcast-pipe
+ExecStopPost=/home/wert/.local/bin/snapcast-pipe-cleanup
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=default.target

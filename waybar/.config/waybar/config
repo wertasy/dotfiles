@@ -14,6 +14,7 @@
     "clock"
   ],
   "modules-right": [
+    "mpris",
     "tray",
     "network",
     "cpu",
@@ -119,6 +120,7 @@
         "",
         "",
         "",
+        "",
         ""
       ]
     },
@@ -127,19 +129,44 @@
   "mpris": {
     "format": "{player_icon} {title}",
     "format-paused": "{status_icon} {title}",
+    "format-stopped": "{player_icon}",
     "player-icons": {
-      "default": "▶",
+      "default": " ",
       "mpv": "🎵"
     },
     "status-icons": {
-      "paused": "⏸"
+      "paused": "⏸ "
     },
     "on-click": "playerctl play-pause",
-    "on-click-right": "playerctl next"
+    "on-scroll-up": "playerctl previous",
+    "on-scroll-down": "playerctl next",
+    "on-click-right": "playerctl next",
+    "smooth-scrolling-threshold": 1,
+    "player": "mpd"
+  },
+  "custom/media-prev": {
+    "format": "⏮",
+    "tooltip": false,
+    "on-click": "playerctl previous",
+    "min-length": 3
+  },
+  "custom/media-play": {
+    "format": "{}",
+    "tooltip": false,
+    "on-click": "playerctl play-pause",
+    "exec": "~/.config/waybar/scripts/media-status.sh",
+    "return-type": "json",
+    "interval": 2
+  },
+  "custom/media-next": {
+    "format": "⏭",
+    "tooltip": false,
+    "on-click": "playerctl next",
+    "min-length": 3
   },
   "custom/power": {
     "tooltip": false,
-    "format": "\uf011",
+    "format": "",
     "on-click": "systemctl suspend -i",
     "on-click-right": "~/.config/waybar/scripts/power-menu.sh"
   },

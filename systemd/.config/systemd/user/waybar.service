@@ -1,0 +1,15 @@
+[Unit]
+Description=Waybar - Wayland Bar
+After=graphical-session.target
+PartOf=graphical-session.target
+StartLimitBurst=5
+StartLimitIntervalSec=30
+
+[Service]
+ExecStart=/usr/sbin/waybar
+Restart=always
+RestartSec=1
+ExecCondition=/usr/bin/test -n "$WAYLAND_DISPLAY"
+
+[Install]
+WantedBy=graphical-session.target

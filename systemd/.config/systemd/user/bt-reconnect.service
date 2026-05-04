@@ -1,0 +1,12 @@
+[Unit]
+Description=Reconnect Bluetooth audio after PipeWire restart
+After=pipewire.service pipewire.socket
+PartOf=pipewire.service
+
+[Service]
+Type=oneshot
+ExecStart=/bin/bash -c 'sleep 2 && bluetoothctl connect 5C:02:14:2C:E6:D6 || true'
+TimeoutStartSec=10
+
+[Install]
+WantedBy=pipewire.service
