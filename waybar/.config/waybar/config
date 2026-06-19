@@ -15,6 +15,8 @@
   ],
   "modules-right": [
     "mpris",
+    "custom/io",
+    "custom/net",
     "tray",
     "network",
     "cpu",
@@ -76,6 +78,20 @@
     "interval": 5,
     "format": "{percentage}% ",
     "on-click-right": "foot -e btop"
+  },
+  "custom/io": {
+    "exec": "~/.config/waybar/scripts/io.sh",
+    "return-type": "json",
+    "interval": 2,
+    "format": "{}",
+    "tooltip": true
+  },
+  "custom/net": {
+    "exec": "~/.config/waybar/scripts/net.sh",
+    "return-type": "json",
+    "interval": 2,
+    "format": "{}",
+    "tooltip": true
   },
   "network": {
     "interval": 3,
@@ -141,8 +157,7 @@
     "on-scroll-up": "playerctl previous",
     "on-scroll-down": "playerctl next",
     "on-click-right": "playerctl next",
-    "smooth-scrolling-threshold": 1,
-    "player": "mpd"
+    "smooth-scrolling-threshold": 1
   },
   "custom/media-prev": {
     "format": "⏮",

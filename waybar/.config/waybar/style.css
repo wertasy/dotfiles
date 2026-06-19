@@ -112,6 +112,8 @@ window#waybar.hidden {
 #clock,
 #cpu,
 #memory,
+#custom-io,
+#custom-net,
 #pulseaudio,
 #battery,
 #custom-power,
@@ -124,6 +126,14 @@ window#waybar.hidden {
   background-color: rgba(30, 30, 40, 0.75);
   border: 1px solid rgba(89, 89, 89, 0.67);
   color: #ffffff;
+}
+
+#custom-io {
+  min-width: 130px;
+}
+
+#custom-net {
+  min-width: 130px;
 }
 
 #tray {

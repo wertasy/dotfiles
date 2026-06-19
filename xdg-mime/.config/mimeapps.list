@@ -17,3 +17,4 @@ audio/flac=mpv.desktop;
 audio/mpeg=mpv.desktop;
 audio/ogg=mpv.desktop;
 audio/x-wav=mpv.desktop;
+x-scheme-handler/baiduyunguanjia=baidunetdisk.desktop
