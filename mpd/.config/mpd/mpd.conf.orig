@@ -11,12 +11,10 @@ sticker_file       "~/.config/mpd/sticker.sql"
 auto_update "yes"
 
 # 音频输出 (针对 PipeWire 或 PulseAudio)
-# Snapcast 多房间同步播放输出
 audio_output {
     type    "pipewire"
     name    "PipeWire Sound Server"
-    target  "snapcast"
-    buffer_time     "200000"
+    buffer_time     "50000"
 }
 
 # 可选：如果你需要 ncmpcpp 的频谱可视化功能，添加此段：

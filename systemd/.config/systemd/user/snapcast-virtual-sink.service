@@ -1,0 +1,15 @@
+[Unit]
+Description=Snapcast Virtual Audio Sink
+After=pipewire.service pipewire-pulse.service
+BindsTo=pipewire.service pipewire-pulse.service
+Before=mpd.service
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStart=/home/wert/.local/bin/snapcast-virtual-sink start
+ExecStop=/home/wert/.local/bin/snapcast-virtual-sink stop
+Environment=PATH=/usr/bin:/usr/local/bin
+
+[Install]
+WantedBy=default.target

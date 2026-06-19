@@ -1,0 +1,11 @@
+[Unit]
+Description=Set PipeWire RT Priority to 90
+After=pipewire.service pipewire-pulse.service wireplumber.service
+
+[Service]
+Type=oneshot
+ExecStart=%h/.local/bin/pipewire-rt-prio.sh
+RemainAfterExit=yes
+
+[Install]
+WantedBy=default.target

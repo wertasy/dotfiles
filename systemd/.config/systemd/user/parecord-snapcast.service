@@ -1,0 +1,13 @@
+[Unit]
+Description=Parecord to Snapcast FIFO
+After=pipewire.service pipewire-pulse.service snapcast-virtual-sink.service
+Requires=snapcast-virtual-sink.service
+
+[Service]
+Type=simple
+ExecStart=/home/wert/.local/bin/parecord-snapcast.sh
+Restart=always
+RestartSec=2
+
+[Install]
+WantedBy=default.target

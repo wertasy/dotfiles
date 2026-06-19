@@ -1,0 +1,12 @@
+[Unit]
+Description=MPD Crossfade Configuration
+After=mpd.service
+Wants=mpd.service
+
+[Service]
+Type=oneshot
+ExecStart=%h/.config/mpd/set-crossfade.sh
+RemainAfterExit=yes
+
+[Install]
+WantedBy=default.target
