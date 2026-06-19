@@ -1,0 +1,168 @@
+// Rofi config — migrated from fuzzel, XWayland backend for fcitx5 IME
+// Arch Linux + Hyprland
+
+configuration {
+    // 模式：应用启动 + 窗口切换 + 运行命令
+    modi: "drun,window,run";
+    show-icons: true;
+    icon-theme: "Papirus-Dark";
+    drun-display-format: "{name}";
+    window-format: "{w}   {c}   {t}";
+    disable-history: false;
+    sidebar-mode: false;
+    matching: "fuzzy";
+    sorting-method: "fzf";
+    click-to-exit: true;
+    cycle: false;
+    xbuf: 4096;
+
+    // 防止嵌套调用
+    resolve-multiline: true;
+}
+
+// 清空默认主题，从零构建
+@theme "/dev/null"
+
+// ===== 全局变量：对齐 Fuzzel 视觉 =====
+// bg=#1b1d1e 88% | selection=#6bb3e0 | border=#33ccff | radius=10 | padding=10 | border=2
+* {
+    bg:              #1b1d1ee0;
+    bg-input:       #1b1d1e;
+    bg-selected:    #6bb3e0ff;
+    fg:             #ffffffff;
+    fg-alt:         #ffffffa8;
+    fg-match:       #33ccffff;
+    fg-selected:    #000000ff;
+    border-color:   #33ccffff;
+    urgent:         #f38ba8ff;
+
+    font:           "Maple Mono 14";
+
+    background-color: transparent;
+    text-color:       @fg;
+    margin:           0;
+    padding:          0;
+    spacing:          0;
+}
+
+// ===== 主窗口：居中网格布局 =====
+window {
+    location:         center;
+    anchor:           center;
+    transparency:     "real";
+    width:            800px;
+    height:           600px;
+    background-color: @bg;
+    border:           2px solid;
+    border-color:     @border-color;
+    border-radius:    10px;
+    padding:          12px;
+    children:         [inputbar, listview];
+    spacing:          8px;
+}
+
+// ===== 输入栏 =====
+inputbar {
+    children:     [prompt, entry];
+    spacing:      8px;
+    padding:      8px 12px;
+    margin:       0px 0px 6px 0px;
+    background-color: @bg-input;
+    border-radius:    8px;
+}
+
+prompt {
+    text-color:     @fg;
+    font:           @font;
+}
+
+entry {
+    text-color:        @fg;
+    placeholder:       "...";
+    placeholder-color: @fg-alt;
+    font:              @font;
+    blink:             true;
+    expand:            true;
+}
+
+// ===== 网格列表 =====
+listview {
+    margin:        0;
+    padding:       4px;
+    lines:         5;
+    columns:       3;
+    fixed-height:  true;
+    cycle:         false;
+    scrollbar:     false;
+    spacing:       6px;
+    background-color: transparent;
+}
+
+// ===== 网格条目（卡片式） =====
+element {
+    padding:          12px 16px;
+    spacing:          12px;
+    border-radius:    8px;
+    background-color: #25272a80;
+    text-color:       @fg;
+    cursor:           pointer;
+}
+element selected {
+    background-color: @bg-selected;
+    text-color:       @fg-selected;
+}
+element alternate {
+    background-color: transparent;
+}
+
+// 图标（网格布局）
+element-icon {
+    size:           32px;
+    vertical-align: 0.5;
+    str:            "";
+}
+
+// 文本（网格布局）
+element-text {
+    vertical-align: 0.5;
+    font:           @font;
+    text-color:     inherit;
+    text-transform: "capitalize";
+}
+// 选中时匹配高亮
+element-text match {
+    text-color:     @fg-selected;
+    font:           "Maple Mono Bold 14";
+}
+
+// 紧急
+element urgent {
+    text-color:     @urgent;
+}
+element selected urgent {
+    background-color: @urgent;
+    text-color:       @bg;
+}
+
+// ===== 错误消息 =====
+message {
+    padding:        8px 12px;
+    background-color: transparent;
+}
+error-message {
+    padding:          12px;
+    border-radius:    10px;
+    background-color: @bg;
+    text-color:       @urgent;
+    font:             @font;
+}
+
+textbox {
+    font:           @font;
+    vertical-align: 0.5;
+}
+
+// 隐藏滚动条
+scrollbar {
+    enabled: false;
+}

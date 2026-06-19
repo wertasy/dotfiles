@@ -1,0 +1,19 @@
+- 1.1.19
+- _NAME: G Pro Wireless Gaming Mouse
+  _absent: [hi-res-scroll, lowres-scroll-mode, hires-smooth-invert, hires-smooth-resolution, hires-scroll-mode, scroll-ratchet, scroll-ratchet-torque, smart-shift,
+    thumb-scroll-invert, thumb-scroll-mode, report_rate_extended, pointer_speed, dpi_extended, speed-change, backlight, backlight_level, backlight_duration_hands_out,
+    backlight_duration_hands_in, backlight_duration_powered, backlight-timed, rgb_control, rgb_zone_, brightness_control, per-key-lighting, fn-swap, reprogrammable-keys,
+    persistent-remappable-keys, divert-keys, disable-keyboard-keys, force-sensing, crown-smooth, divert-crown, divert-gkeys, m-key-leds, mr-key-led, multiplatform,
+    change-host, gesture2-gestures, gesture2-divert, gesture2-params, haptic-level, haptic-play, sidetone, equalizer, adc_power_management]
+  _battery: 4097
+  _modelId: 4079C0880000
+  _sensitive: {dpi: false, led_control: false, led_zone_1: false, led_zone_2: true, onboard_profiles: false, report_rate: false}
+  _serial: 349557CA
+  _unitId: 349557CA
+  _wpid: '4079'
+  dpi: 1200
+  led_control: 1
+  led_zone_1: !LEDEffectSetting {ID: 3, color: 0, intensity: 0, period: 100, ramp: 0, speed: 0}
+  led_zone_2: !LEDEffectSetting {ID: 10, color: 1864152, intensity: 49, period: 5000, ramp: 0, speed: 0}
+  onboard_profiles: 2
+  report_rate: 1

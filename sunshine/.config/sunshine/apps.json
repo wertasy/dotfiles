@@ -1,0 +1,49 @@
+{
+  "env": {
+    "PATH": "$(PATH):$(HOME)/.local/bin"
+  },
+  "apps": [
+    {
+      "name": "Desktop",
+      "image-path": "desktop.png"
+    },
+    {
+      "name": "Steam Deck Desktop",
+      "image-path": "desktop.png",
+      "prep-cmd": [
+        {
+          "do": "~/.local/scripts/steamdeck-display.sh create",
+          "undo": "~/.local/scripts/steamdeck-display.sh remove"
+        }
+      ],
+      "output": "HEADLESS-1"
+    },
+    {
+      "name": "Steam Big Picture",
+      "detached": [
+        "setsid steam steam://open/bigpicture"
+      ],
+      "prep-cmd": [
+        {
+          "do": "",
+          "undo": "setsid steam steam://close/bigpicture"
+        }
+      ],
+      "image-path": "steam.png"
+    },
+    {
+      "name": "Steam Deck Gaming",
+      "detached": [
+        "setsid steam steam://open/bigpicture"
+      ],
+      "prep-cmd": [
+        {
+          "do": "~/.local/scripts/steamdeck-display.sh create && setsid steam steam://open/bigpicture",
+          "undo": "setsid steam steam://close/bigpicture && ~/.local/scripts/steamdeck-display.sh remove"
+        }
+      ],
+      "output": "HEADLESS-1",
+      "image-path": "steam.png"
+    }
+  ]
+}

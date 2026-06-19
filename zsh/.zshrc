@@ -56,6 +56,7 @@ bindkey '^[[1;5C' forward-word                                  #
 
 #bindkey '^H' backward-kill-word                                 # delete previous word with ctrl+backspace
 bindkey '^[[Z' undo                                             # Shift+tab undo last action
+bindkey '[27;5;13~' accept-line                               # Ctrl+Enter
 
 #nvim() {
 #    if [[ -z $NVIM_LISTEN_ADDRESS ]]; then
@@ -150,18 +151,19 @@ zstyle ':fzf-tab:complete:cd:*' fzf-preview 'exa -1 --color=always $realpath'
 # andnable
 zstyle ':fzf-tab:*' switch-group ',' '.'
 
-export GITHUB_TOKEN=***REDACTED_GITHUB_TOKEN***
-export HF_TOKEN=***REDACTED_HF_TOKEN***
+# 令牌从不受版本控制的文件加载（见 ~/.config/zsh/secrets.zsh）
+[ -f ~/.config/zsh/secrets.zsh ] && source ~/.config/zsh/secrets.zsh
 
 export ANDROID_SDK_ROOT=/opt/android-sdk
 
-export PATH=$HOME/.local/go/bin:$HOME/.local/bin:$HOME/.gem/ruby/3.0.0/bin:$PATH
+export PATH=$HOME/.cargo/bin:$HOME/go/bin:$HOME/.local/go/bin:$HOME/.local/bin:$HOME/.gem/ruby/3.0.0/bin:$PATH
 export PATH=$PATH:$ANDROID_SDK_ROOT/tools:$ANDROID_SDK_ROOT/platform-tools
 
 
-export FLUTTER_STORAGE_BASE_URL="https://mirrors.tuna.tsinghua.edu.cn/flutter"
-export PUB_HOSTED_URL="https://mirrors.tuna.tsinghua.edu.cn/dart-pub"
+export FLUTTER_STORAGE_BASE_URL="https://mirrors.ustc.edu.cn/flutter"
+export PUB_HOSTED_URL="https://mirrors.ustc.edu.cn/dart-pub"
 
-export RUSTUP_UPDATE_ROOT=https://mirrors.tuna.tsinghua.edu.cn/rustup/rustup
-export RUSTUP_DIST_SERVER=https://mirrors.tuna.tsinghua.edu.cn/rustup
+export RUSTUP_DIST_SERVER=https://mirrors.ustc.edu.cn/rust-static
+export RUSTUP_UPDATE_ROOT=https://mirrors.ustc.edu.cn/rust-static/rustup
+
 source /usr/share/nvm/init-nvm.sh
